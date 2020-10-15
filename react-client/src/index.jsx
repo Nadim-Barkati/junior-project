@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import List from './components/List.jsx';
+import questions from './questions.js';
+import Quizz from './components/quizz.jsx';
+//import List from './components/List.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +14,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+
+    this.setState({
+      items: questions
+    })
+
+    /*
     $.ajax({
       url: '/items', 
       success: (data) => {
@@ -23,12 +31,14 @@ class App extends React.Component {
         console.log('err', err);
       }
     });
+    */
+
   }
 
   render () {
     return (<div>
       <h1>Item List</h1>
-      <List items={this.state.items}/>
+      <Quizz items={this.state.items}/>
     </div>)
   }
 }

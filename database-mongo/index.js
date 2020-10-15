@@ -11,21 +11,26 @@ db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+var userSchema = mongoose.Schema({
+  username: String,
+  password: String,
+  feedback: String 
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var User = mongoose.model('User', userSchema);
 
 var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
+  User.find({}, function(err, users) {
     if(err) {
       callback(err, null);
     } else {
-      callback(null, items);
+      callback(null, users);
     }
   });
 };
 
-module.exports.selectAll = selectAll;
+var addUser= function (user) {
+  User.create(user);
+}
+
+module.exports.users={selectAll,addUser}
