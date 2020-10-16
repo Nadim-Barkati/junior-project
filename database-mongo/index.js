@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
-
+mongoose.Promise = global.Promise ;
 var db = mongoose.connection;
 
 db.on('error', function() {
@@ -33,4 +33,18 @@ var addUser= function (user) {
   User.create(user);
 }
 
-module.exports.users={selectAll,addUser}
+const saveUser = (data) => {
+  return new Promise((resolve,reject) => {
+      var newUser = new User({username:data.username,password:data.password,feedback:""});
+      newUser.save((err,res) => {
+          if(err) {
+              reject(err);
+          } else {
+              resolve(res)
+          }
+      })
+  }) 
+};
+
+
+module.exports.users={selectAll,addUser,saveUser}

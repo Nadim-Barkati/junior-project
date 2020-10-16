@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import questions from './questions.js';
 import Quizz from './components/quizz.jsx';
+import Signup from './components/Signup.jsx';
+import Login from './components/Login.jsx';
 //import List from './components/List.jsx';
 
 class App extends React.Component {
@@ -39,6 +41,8 @@ class App extends React.Component {
     return (<div>
       <h1>Item List</h1>
       <Quizz items={this.state.items}/>
+      <Signup/>
+      <Login/>
     </div>)
   }
 }
