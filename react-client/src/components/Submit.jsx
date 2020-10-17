@@ -23,7 +23,7 @@ class Submit extends React.Component {
     render() {
         return (
           <div>
-              <button type="submit" onClick={this.handleClick}  >Submit</button>
+              <button className="button" type="submit" onClick={this.handleClick}  >Submit</button>
            
           </div>
           );

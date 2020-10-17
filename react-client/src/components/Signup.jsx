@@ -50,19 +50,21 @@ render() {
       <h1>Signup</h1>
       <form onSubmit={Signup}>
       <input
+                  className="input"
                   type="text"
                   placeholder="Username"
                   value={this.state.username}
                   onChange={this.handleInputUsername}
                 />
                 <input
+                 className="input"
                   type="password"
                   placeholder="password"
                   value={this.state.password}
                   onChange={this.handleInputPassword}
                 />
         <br />
-        <button type="submit" onClick={this.handleClick} >Signup</button>
+        <button className="button" type="submit" onClick={this.handleClick} >Signup</button>
       </form>
     </div>
   );

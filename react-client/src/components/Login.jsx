@@ -1,3 +1,4 @@
+
 import React from 'react'; 
 import axios from 'axios'
 
@@ -47,12 +48,14 @@ render() {
         <h1>Login</h1>
         <form onSubmit={Login}>
         <input
+                    className="input"
                     type="text"
                     placeholder="Username"
                     value={this.state.username}
                     onChange={this.handleInputUsername}
                   />
                   <input
+                    className="input"
                     type="password"
                     placeholder="password"
                     value={this.state.password}

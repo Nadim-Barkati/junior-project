@@ -1,0 +1,53 @@
+.button{
+    background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.input[type=text ] {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  .input[ type=password ] {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  .custom-select{
+    position: relative;
+    font-family: Arial;
+    
+  }
+
+  .title{
+    padding: 30px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+  }
+
+  .welcome{
+    text-align: center;
+    background: greenyellow;
+    color: white;
+  }
+
+  .question{
+  color: white ;
+  
+  }
+
+  body{
+      background-color:	#79b1c4;
+  }
+
+  

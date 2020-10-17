@@ -6,7 +6,7 @@ import Quizz from './components/quizz.jsx';
 import Signup from './components/Signup.jsx';
 import Login from './components/Login.jsx';
 import Submit from './components/Submit.jsx';
-import Questions from './components/Questions.jsx'
+
 import Feedback from './components/Feedback.jsx'
 //import List from './components/List.jsx';
 
@@ -16,9 +16,11 @@ class App extends React.Component {
     super(props);
     this.state = { 
       items: [],
-      showHideQuizz: false
+      showHideQuizz: false ,
+      showHideFeedback: false
     }
     this.onclickchangestate=this.onclickchangestate.bind(this) ;
+    //this.onclickchangestate=this.onclickchangestate.bind(this) ;
   }
 
 
@@ -26,6 +28,9 @@ class App extends React.Component {
     this.setState({showHideQuizz:!this.state.showHideQuizz}) 
  }
   
+ onclickcshowfeedback(){
+  this.setState({showHideFeedback:!this.state.showHideFeedback}) 
+}
  
  componentDidMount() {
 
@@ -52,7 +57,7 @@ class App extends React.Component {
   render () {
 
     return (<div>
-      <h1>Item List</h1>
+      <h1 className="welcome" >Welcome </h1>
       {this.state.showHideQuizz===false?(
         <div>
       <Signup showHideQuizz={this.onclickchangestate} />
@@ -61,7 +66,9 @@ class App extends React.Component {
         <div>
       <Quizz items={this.state.items}/>
       <Submit/>
+      <div>
       <Feedback/>
+      </div>
       </div>) }
     </div>)
   }

@@ -36,10 +36,27 @@ app.post('/signup', function (req, res) {
 })
 
 app.post('/login', function (req, res) {
-  //res.send('POST request to the homepage')
   console.log('post on /login' , req.body)
-  
+  users.saveUser(req.body)
+  .then((result) =>{
+    console.log('new user successfully registered ', result)
+  })
+  .catch(err => {
+    console.log('error new user login', err)
+  }) 
 })
+
+app.post('/feedback', function (req, res) {
+  console.log('post on /feedback' , req.body)
+  users.updateFeedback(req.body)
+  .then((result) =>{
+    console.log('new feedback successfully registered ', result)
+  })
+  .catch(err => {
+    console.log('error new user feedback', err)
+  }) 
+})
+
 
 // app.get("/singup", async (req, res) => {
 
