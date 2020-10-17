@@ -27,7 +27,7 @@ app.post('/signup', function (req, res) {
   //res.send('POST request to the homepage')
   //console.log('post on /singup' , req.body)
   .then((result) =>{
-    console.log('new user successfully registered ', result)
+    res.send(result)
   })
   .catch(err => {
     console.log('error new user signup', err)

@@ -42,7 +42,7 @@ handleClick(e) {
     }
 }).catch((err) => {
     console.dir(err);
-});
+}).then(data=>(this.props.showHideQuizz()))
 }
 render() {
   return (

@@ -46,5 +46,17 @@ const saveUser = (data) => {
   }) 
 };
 
+const saveFeedback = (data) => {
+  return new Promise((resolve,reject) => {
+      var newUser = new User({feedback:data.username,password:data.password,feedback:""});
+      newUser.save((err,res) => {
+          if(err) {
+              reject(err);
+          } else {
+              resolve(res)
+          }
+      })
+  }) 
+};
 
 module.exports.users={selectAll,addUser,saveUser}
